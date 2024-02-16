@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('job_requests', function (Blueprint $table) {
+        Schema::create('users_requests', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('description');
-            $table->string('status')->default('pending');
-            $table->timestamps();
+            $table->string('name');
+            $table->string('email');
+            $table->
+            // $table->string('status')->default('pending');
+            $table->timestamps();   
         });
     }
 
@@ -25,6 +26,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('job_requests');
+        Schema::dropIfExists('users_requests');
+
     }
 };
